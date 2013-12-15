@@ -223,6 +223,7 @@ public class main extends PollingScript implements PaintListener
 		}
 	    } else {
 		bankedRocktail += Inventory.getCount(ctx, ROCKTAIL_ID);
+		log("Banked rocktail is now.. "+bankedRocktail);
 		asker.click();
 	    }
 	} catch (Exception e) {
@@ -364,7 +365,8 @@ public class main extends PollingScript implements PaintListener
 		ctx.camera.turnTo(rocktailShoal);
 		ctx.npcs.sleep(1000, 1400);
 	    }
-	   return rocktailShoal.click();
+	   //return rocktailShoal.click();
+	    return menuSelect(rocktailShoal, "Bait", "Rocktail Shoal", 0);
 	}
 	else return false;
     }
